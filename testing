@@ -1,0 +1,47 @@
+ Register a User & login 
+ POST 
+
+{
+  "username": "testuser1",
+  "password": "password123"
+}
+
+ADD MOVIE 
+  {
+    "name": "Joker",
+    "year": 2019,
+    "imdb_rating": 8.4,
+    "genre": "Crime, Thriller",
+    "reviews": []
+  }
+
+EDIT MOVIE 
+  {
+    "name": "Joker 2",
+    "year": 2024,
+    "imdb_rating": 5.3,
+    "genre": "Crime, Thriller",
+    "reviews": []
+  }
+
+GET ONE REVIEWS 
+http://localhost:5000/api/v1.0/movies/6720ba2023d8a268141002f9/reviews 
+
+{
+  "genre": "Crime, Drama, Thriller",
+  "comment": "The story falls flat due to weak writing. While a few scenes are dramatically well-executed, they fail to captivate the audience, making the movie feel tedious from the start. The progression in both writing and direction is lacking, raising the question of whether a sequel was necessary in the first place."
+}
+
+
+SEARCH BY 
+search rating with range 
+http://localhost:5000/api/v1.0/movies/search?imdb_rating_min=7&imdb_rating_max=9  
+
+search by genre 
+http://localhost:5000/api/v1.0/movies/search?genre=Western
+
+search by year 
+http://localhost:5000/api/v1.0/movies/search?year=2002
+
+search by reviewer 
+http://localhost:5000/api/v1.0/movies/search?reviewer=testuser
